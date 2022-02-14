@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mysql
+    tier: database
+  name: mysql
+  namespace: dbapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+      tier: database
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mysql
+        tier: database
+    spec:
+      containers:
+      - image: registry.access.redhat.com/rhscl/mysql-56-rhel7:latest
+        name: mysql
+        env:
+        - name: MYSQL_DATABASE
+          value: dbapp
+        - name: MYSQL_PASSWORD
+          value: dbapp
+        - name: MYSQL_USER
+          value: dbapp
+        resources: {}
+        volumeMounts:
+        - mountPath: /var/lib/mysql/data
+          name: mysql-db
+      volumes:
+      - name: mysql-db
+        emptyDir: {}
+...

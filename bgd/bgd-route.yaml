@@ -3,6 +3,7 @@ kind: Route
 annotations:
     argocd.argoproj.io/sync-wave: "2"
 metadata:
+  namespace: bgd
   creationTimestamp: null
   labels:
     app: bgd

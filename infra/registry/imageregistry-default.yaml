@@ -1,0 +1,29 @@
+apiVersion: v1
+items:
+- apiVersion: imageregistry.operator.openshift.io/v1
+  kind: Config
+  metadata:
+    finalizers:
+    - imageregistry.operator.openshift.io/finalizer
+    name: cluster
+  spec:
+    httpSecret: e5f66bf93e520dffa9a6d010521a30be2a8f9135a26a509166ed5cb8c4d5b891c24cb994571921118169ff7e9d47663c1d30dfd6461f3e5f5e715d9ea6a11219
+    logLevel: Normal
+    managementState: Managed
+    observedConfig: null
+    operatorLogLevel: Normal
+    proxy: {}
+    replicas: 2
+    requests:
+      read:
+        maxWaitInQueue: 0s
+      write:
+        maxWaitInQueue: 0s
+    rolloutStrategy: RollingUpdate
+    storage:
+      managementState: Managed
+      s3:
+        bucket: sia-l8klc-image-registry-ap-southeast-1-siabcaeyuxilqcqfytlkii
+        encrypt: true
+        region: ap-southeast-1
+        virtualHostedStyle: false

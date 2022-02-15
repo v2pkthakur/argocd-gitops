@@ -1,0 +1,16 @@
+apiVersion: v1
+items:
+- apiVersion: operator.openshift.io/v1
+  kind: IngressController
+    name: default
+    namespace: openshift-ingress-operator
+    uid: f8152b4e-3591-45fc-b00f-6f7ea3345879
+  spec:
+    clientTLS:
+      clientCA:
+        name: ""
+      clientCertificatePolicy: ""
+    httpEmptyRequestsPolicy: Respond
+    httpErrorCodePages:
+      name: ""
+    replicas: 2

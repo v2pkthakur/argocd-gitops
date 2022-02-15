@@ -12,7 +12,7 @@
     observedConfig: null
     operatorLogLevel: Normal
     proxy: {}
-    replicas: 2
+    replicas: 3
     requests:
       read:
         maxWaitInQueue: 0s

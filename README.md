@@ -1,2 +1,2 @@
 # argocd-gitops
-Sample Apps for ArgoCD
+Sample GitOps configurations primarily designed for Openshift 4. 
